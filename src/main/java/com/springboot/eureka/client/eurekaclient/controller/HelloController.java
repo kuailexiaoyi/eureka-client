@@ -3,6 +3,7 @@ package com.springboot.eureka.client.eurekaclient.controller;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Description:
@@ -18,6 +19,7 @@ public class HelloController {
     private String port;
 
     @RequestMapping("/hello")
+    @ResponseBody
     public String sayHello(String str) {
         return "Hello World,I'm from port:" + port+"," + str;
     }
