@@ -3,10 +3,10 @@ VOLUME /tmp
 ADD eureka-client-0.0.1-SNAPSHOT.jar eureka-client.jar
 RUN ["/bin/bash","-c","touch /eureka-client.jar"]
 #指定JAVA 环境变量
-ENV JAVA_HOME /jdk/jre
+ENV JAVA_HOME /usr/java/jdk1.8.0_144
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV CLASSPATH .:$JAVA_HOME/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 #开放8761端口
 EXPOSE 8761
 #配置容器启动后执行的命令
-ENTRYPOINT ["java","-jar","/eureka-server.jar"]
+ENTRYPOINT ["java","-jar","/eureka-client.jar"]
